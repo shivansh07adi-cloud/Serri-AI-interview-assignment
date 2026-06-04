@@ -129,6 +129,7 @@ const startServer = async () => {
   app.use(express.json({ limit: '3mb' }));
   app.use(express.urlencoded({ extended: true, limit: '3mb' }));
   app.use(handleJsonParseError);
+  app.use('/api/contacts', require('./routes/contacts'));
 
   /**
    * Express 5 Compatibility: Make req.query writable for mongoSanitize
